@@ -1,0 +1,7 @@
+databaseChangeLog:
+      - changeSet:
+            id: 1
+            author: jb
+            changes:
+            - sqlFile:
+                  path: db/migration/insert-books.sql
