@@ -3,17 +3,23 @@ databaseChangeLog:
             id: 1
             author: jb
             changes:
-            - sqlFile:
-                  path: db/migration/create-books.sql
+                  - sqlFile:
+                          path: db/migration/create-books.sql
       - changeSet:
-            id: 2
-            author: jb
-            changes:
-            - sqlFile:
-                  path: db/migration/create-reviews.sql
+              id: 2
+              author: jb
+              changes:
+                    - sqlFile:
+                            path: db/migration/create-reviews.sql
       - changeSet:
-            id: 3
-            author: jb
-            changes:
-            - sqlFile:
-                  path: db/migration/create-awards.sql
+              id: 3
+              author: jb
+              changes:
+                    - sqlFile:
+                            path: db/migration/create-awards.sql
+      - changeSet:
+              id: 4
+              author: jb
+              changes:
+                    - sqlFile:
+                            path: db/migration/create-messages.sql
