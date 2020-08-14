@@ -28,10 +28,19 @@ public class ReviewService {
                 .getResultList()).forEach(this::display);
     }
 
-    public void displayAllEager() {
+    public void displayChildrenEagerly() {
         entityManager
-                .createQuery("select r from Review r left join fetch r.book", Review.class)
-                .getResultList().forEach(this::display);
+                .createQuery("select r from Review r", Review.class)
+                .getResultList()
+                .forEach(this::display);
+    }
+
+    public void displayAllEagerly() {
+        entityManager
+                .createQuery("select b from Book b left join fetch b.reviews", Book.class)
+                .getResultList().stream()
+                .flatMap(b -> b.getReviews().stream())
+                .forEach(this::display);
     }
 
     @Transactional

@@ -16,8 +16,13 @@ class ReviewServiceTest {
     }
 
     @Test
+    void nPlusOneEagerlyFetchingChildren() {
+        reviewService.displayChildrenEagerly();
+    }
+
+    @Test
     void nPlusOneWorkarounds() {
-        reviewService.displayAllEager();
+        reviewService.displayAllEagerly();
     }
 
     @Test
